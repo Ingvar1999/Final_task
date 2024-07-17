@@ -9,7 +9,7 @@ def test_guest_can_go_to_login_page(browser):
     page.open()                      # открываем страницу
     page.go_to_login_page()          # выполняем метод страницы — переходим на страницу логина
 
-# Версия от 16.07.2024 г. 20:34
+# Версия от 17.07.2024 г. 08:34
 
 def go_to_login_page(browser):
     login_link = browser.find_element(By.CSS_SELECTOR, "#login_link")
@@ -20,3 +20,10 @@ def test_guest_can_go_to_login_page(browser):
     browser.get(link) 
     time.sleep(10)
     go_to_login_page(browser) 
+
+def test_guest_should_see_login_link(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = MainPage(browser, link)
+    page.open()
+    time.sleep(10)
+    page.should_be_login_link()
