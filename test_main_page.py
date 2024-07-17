@@ -1,3 +1,4 @@
+from .pages.locators import MainPageLocators
 from .pages.main_page import MainPage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
